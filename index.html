@@ -2,6 +2,20 @@
   <head>
     <title>iFrameTest</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5VTM9ZGK");
+    </script>
+    <!-- End Google Tag Manager -->
     <script
       src="https://app.bullseyelocations-staging.com/js/bullseye-tracking.js"
       async
@@ -15,20 +29,20 @@
       ];
 
       // Call the install function with the trackingCodes array
-      setTimeout(() => {
+      /*setTimeout(() => {
         install(trackingCodes, {
           linker: {
             accept_incoming: true,
           },
           send_page_view: false,
         });
-      }, 500);
+      }, 500);*/
     </script>
   </head>
   <body>
     <!-- Header -->
     <div style="background-color: black; color: white">
-      <br /><br />This is the Header 1.16<br /><br />
+      <br /><br />This is the Header 1.17<br /><br />
     </div>
 
     <!-- Body -->
