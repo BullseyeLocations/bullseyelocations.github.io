@@ -104,7 +104,19 @@
         <button type="submit">Subscribe</button>
       </form>
 
-      <a class="direction_url" href="https://www.google.com">ir a google</a>
+      <a target="_blank" class="direction_url" href="https://www.google.com"
+        >ir a google</a
+      >
+      <script>
+        const bullseyeCustomEvent = () => {
+          if (typeof dataLayer === "object") {
+            dataLayer.push({ event: "bullseye_custom_event" });
+          }
+        };
+      </script>
+      <button id="bullseye_custom_event" onclick="bullseyeCustomEvent()">
+        Registrar evento de bullseye
+      </button>
 
       <iframe
         id="bullseye_iframe"
