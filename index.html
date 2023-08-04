@@ -52,7 +52,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
     <div style="background-color: black; color: white">
-      <br /><br />This is the Header 1.18<br /><br />
+      <br /><br />This is the Header 1.19<br /><br />
     </div>
 
     <!-- Body -->
@@ -68,7 +68,7 @@
         // it checks if the event's data has a type property that is equal to "bullseye_tracking_data"
         setTimeout(() => {
           if (
-            typeof gtag !== "undefined" &&
+            (typeof gtag !== "undefined" || typeof dataLayer !== "undefined") &&
             typeof bullseyeTracking === "function"
           ) {
             window.onmessage = function (e) {
