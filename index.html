@@ -52,7 +52,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
     <div style="background-color: black; color: white">
-      <br /><br />This is the Header 1.21<br /><br />
+      <br /><br />This is the Header 1.22<br /><br />
     </div>
 
     <!-- Body -->
@@ -78,7 +78,8 @@
                 "https://bullseyelocations.github.io",
                 window.gtag ||
                   function () {
-                    window.dataLayer.push(arguments);
+                    console.log("My Arguments", arguments, { ...arguments });
+                    window.dataLayer.push(...arguments);
                   }
               );
             };
