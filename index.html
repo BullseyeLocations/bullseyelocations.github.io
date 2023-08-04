@@ -52,7 +52,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
     <div style="background-color: black; color: white">
-      <br /><br />This is the Header 1.22<br /><br />
+      <br /><br />This is the Header 1.23<br /><br />
     </div>
 
     <!-- Body -->
@@ -72,15 +72,22 @@
             typeof bullseyeTracking === "function"
           ) {
             window.onmessage = function (e) {
+              window.dataLayer = window.dataLayer || [];
+              window.gtag =
+                window.gtag ||
+                function gtag() {
+                  dataLayer.push(arguments);
+                };
+
+              gtag("js", new Date());
+
+              gtag("config", trackingCodes[0]);
+
               bullseyeTracking(
                 e,
                 trackingCodes[0],
                 "https://bullseyelocations.github.io",
-                window.gtag ||
-                  function () {
-                    console.log("My Arguments", arguments, { ...arguments });
-                    window.dataLayer.push(...arguments);
-                  }
+                window.gtag
               );
             };
           }
