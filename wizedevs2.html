@@ -188,11 +188,11 @@
             typeof bullseyeTracking === "function"
           ) {
             window.onmessage = function (e) {
-              window.gtag =
+              /*window.gtag =
                 window.gtag ||
                 function gtag(event, eventName, extraParameters) {
                   dataLayer.push({ event: eventName, ...extraParameters });
-                };
+                };*/
 
               bullseyeTracking(
                 e,
