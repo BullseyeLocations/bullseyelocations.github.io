@@ -176,7 +176,7 @@
         </div>
       </div>
     </section>
-    <section id="bullseye-locator">
+    <section id="bullseye-locator" style="display: none">
       <script
         src="//app.bullseyelocations-staging.com/js/bullseye-tracking.js"
         async
@@ -188,17 +188,17 @@
             typeof bullseyeTracking === "function"
           ) {
             window.onmessage = function (e) {
-              /*window.gtag =
+              window.gtag =
                 window.gtag ||
                 function gtag(event, eventName, extraParameters) {
                   dataLayer.push({ event: eventName, ...extraParameters });
-                };*/
+                };
 
               bullseyeTracking(
                 e,
                 "G-SGWMLDP2S8",
                 "https://nicolock-admin.bullseyelocations-staging.com",
-                null
+                gtag
               );
             };
           }
