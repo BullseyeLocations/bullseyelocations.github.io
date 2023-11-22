@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake Landing Page</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-10BRTX3LFS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-10BRTX3LFS", { debug_mode: true });
+    </script>
+    <div class="container">
+      <header class="text-center mt-5">
+        <h1>Welcome to Our Fake Landing Page</h1>
+        <p>Discover Amazing Products and Services</p>
+      </header>
+      <section>
+        <script
+          src="//app.bullseyelocations-staging.com/js/bullseye-tracking.js"
+          async
+        ></script>
+        <script>
+          setTimeout(() => {
+            if (
+              (typeof gtag !== "undefined" ||
+                typeof dataLayer !== "undefined") &&
+              typeof bullseyeTracking === "function"
+            ) {
+              window.onmessage = function (e) {
+                window.gtag =
+                  window.gtag ||
+                  function gtag(event, eventName, extraParameters) {
+                    dataLayer.push({ event: eventName, ...extraParameters });
+                  };
+                bullseyeTracking(
+                  e,
+                  "G-10BRTX3LFS",
+                  "https://ecoatm-admin.bullseyelocations-staging.com",
+                  gtag
+                );
+              };
+            }
+          }, 500);
+        </script>
+        <script>
+          /*const myCustomListener = (e) => {
+            if (e?.data?.type === "my_custom_event") {
+              console.log("You can do whatever with this data", e.data.payload);
+            }
+          };
+
+          addEventListener("message", myCustomListener, false);*/
+        </script>
+        <script type="text/javascript">
+          var bullseyelistener = function (e) {
+            var regex = new RegExp("^.*bullseyelocations-staging\.com.*$");
+            if (regex.test(e.origin) && parseInt(e.data)) {
+              document.getElementById("bullseye_iframe").height =
+                Math.round(e.data) < 600 ? 700 : Math.round(e.data);
+            } else {
+              if (e.data == "scroll") {
+                window.scrollTo(0, 0);
+              }
+            }
+          };
+          if (window.addEventListener) {
+            addEventListener("message", bullseyelistener, false);
+          } else {
+            attachEvent("onmessage", bullseyelistener);
+          }
+        </script>
+        <iframe
+          id="bullseye_iframe"
+          title="Bullseye Locations Search"
+          allowfullscreen="true"
+          src="https://ecoatm-admin.bullseyelocations-staging.com/local/Eco-Interface-6?country=1&zip=33172&f=1"
+          width="100%"
+          height="1400"
+          border="0"
+          style="border: none"
+          scrolling="auto"
+          onload="window.parent.scrollTo(0,0);"
+          allow="geolocation"
+        ></iframe>
+        <script>
+          var queryString = window.location.search.substring(1);
+          var iframeSrc = document.getElementById("bullseye_iframe").src;
+          if (iframeSrc.includes("?")) {
+            if (queryString && queryString !== "") {
+              iframeSrc += "&" + queryString;
+            }
+          } else {
+            if (queryString && queryString !== "") {
+              iframeSrc += "?" + queryString;
+            }
+          }
+          document
+            .getElementById("bullseye_iframe")
+            .setAttribute("src", iframeSrc);
+        </script>
+      </section>
+      <section class="row mt-5">
+        <div class="col-md-6">
+          <img
+            src="https://via.placeholder.com/400"
+            alt="Product Image"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2>Product Title</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor
+            ipsum mauris, vel mattis orci tempor vitae.
+          </p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </section>
+
+      <section class="row mt-5">
+        <div class="col-md-6">
+          <h2>Service Title</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor
+            ipsum mauris, vel mattis orci tempor vitae.
+          </p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="https://via.placeholder.com/400"
+            alt="Service Image"
+            class="img-fluid"
+          />
+        </div>
+      </section>
+
+      <footer class="text-center mt-5">
+        <p>&copy; 2023 Fake Landing Page. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
