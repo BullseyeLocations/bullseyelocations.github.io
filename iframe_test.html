@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-  <div class="embed-component section"><iframe sandbox="allow-forms allow-scripts allow-same-origin allow-top-navigation allow-popups allow-modals" frameborder="0" src="https://genlyte-us.bullseyelocations.com/local/Genlyte-US" class="embed-component__iframe" id="signify_iframe" height="1000" width="100%" scrolling="auto"></iframe>
+    <div style="width: 50%">
+        <h1>Sandboxed</h1>
+          <div class="embed-component section"><iframe sandbox="allow-forms allow-scripts allow-same-origin allow-top-navigation allow-popups allow-modals" frameborder="0" src="https://genlyte-us.bullseyelocations.com/local/Genlyte-US" class="embed-component__iframe" id="signify_iframe" height="1000" width="100%" scrolling="auto"></iframe>
 <script type="text/javascript">
     (function() {
     var bullseyelistener = function (e) {
@@ -24,5 +26,27 @@
 
 })();
 </script></div>
+    </div>
+<div style="width: 50%">
+    <h1>No Sandboxed</h1>
+    <div class="embed-component section"><iframe frameborder="0" src="https://genlyte-us.bullseyelocations.com/local/Genlyte-US" class="embed-component__iframe" id="signify_iframe" height="1000" width="100%" scrolling="auto"></iframe>
+<script type="text/javascript">
+    (function() {
+    var bullseyelistener = function (e) {
+        var regex = new RegExp("^.*bullseyelocations\.com.*$");
+        if (regex.test(e.origin) && parseInt(e.data)) {
+            document.getElementById("signify_iframe").height = Math.round(e.data) < 600 ? 900 : Math.round(e.data);
+        } else {
+            if (e.data == "scroll") {
+                window.scrollTo(0,0);
+            }
+        }
+    };
+
+    addEventListener("message", bullseyelistener, false);
+
+})();
+</script></div>
+</div>
 </body>
 </html>
